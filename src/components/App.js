@@ -1,15 +1,25 @@
 import '../styles/App.scss';
+import { useState, useEffect } from 'react';
+import getApiData from '../services/fetchMovies';
+import Filters from './Filters';
+import MovieList from './MovieList';
 
 function App() {
+  const [dataMovies, setDataMovies] = useState([]);
+
+  useEffect(() => {
+    getApiData().then((dataApi) => {
+      setDataMovies(dataApi);
+    });
+  }, []);
+
   return (
-    <div className='App'>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        alias fuga odio odit atque expedita assumenda numquam quidem,
-        voluptatibus facere ullam eos quos iusto beatae sit perspiciatis dolore
-        laudantium minus.
-      </p>
-    </div>
+    <>
+      <div>
+        <h1> Owen y su WOW</h1>
+        <MovieList dataMovie={dataMovies} />
+      </div>
+    </>
   );
 }
 
