@@ -7,9 +7,11 @@ const getApiData = () => {
       const dataClean = data.map((movie) => {
         return {
           poster: movie.poster,
-          movie: movie.movie,
+          name: movie.movie,
           quote: movie.full_line,
           year: movie.year,
+          audio: movie.audio,
+          director: movie.director,
         };
       });
       return dataClean;

@@ -1,12 +1,12 @@
 //Listado de las películas
 
-import '../styles/MovieList.scss';
+import '../styles/MovieSceneList.scss';
 
-function MovieList(props) {
+function MovieSceneList(props) {
   const movieItem = props.dataMovie.map((movie, index) => {
     return (
       <li className='card' key={index}>
-        <img className='movie_poster' src={movie.poster} alt='image poster' />
+        <img src={movie.poster} alt='image poster' title='poster' />
         <p>{movie.movie}</p>
         <p>{movie.year}</p>
         <p>{movie.quote}</p>
@@ -21,4 +21,4 @@ function MovieList(props) {
   );
 }
 
-export default MovieList;
+export default MovieSceneList;
