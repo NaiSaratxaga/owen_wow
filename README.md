@@ -1,4 +1,4 @@
-# Hola 👋🏽, soy Naiara
+# Hola <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"> , soy Naiara
 
 **Y este es mi ejercicio de evaluación final del módulo 3, React**
 
@@ -111,7 +111,7 @@ película.
 
 ### Donde se puede ver 👀
 
-## **[Proyecto Owen Wilson's WOW ](http://beta.adalab.es/modulo-3-evaluacion-final-NaiSaratxaga/)**
+### **[Proyecto Owen Wilson's WOW ](http://beta.adalab.es/modulo-3-evaluacion-final-NaiSaratxaga/)**
 
 ---
 
@@ -149,5 +149,6 @@ npm start
 
 ---
 
-###**Autora:**
+### Autora:
+
 [Naiara Saratxaga](https://github.com/NaiSaratxaga)
