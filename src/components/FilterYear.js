@@ -5,7 +5,11 @@ function FilterYear(props) {
 
   const years = props.availableYears || [];
   const options = years.map((year) => {
-    return <option value={`${year}`}>{year}</option>;
+    return (
+      <option key={`${year}`} value={`${year}`}>
+        {year}
+      </option>
+    );
   });
 
   return (
