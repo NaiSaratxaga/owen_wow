@@ -1,4 +1,4 @@
-// Detalle de cada peli
+// Detalle de cada película
 
 function MovieSceneDetail() {
   return (

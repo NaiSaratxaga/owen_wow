@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 
 import getApiData from '../services/fetchMovies';
 //import LocalStorage from "../services/localStorage"
+
 import Filters from './Filters';
 import MovieSceneList from './MovieSceneList';
+import MovieSceneDetail from './MovieSceneDetail';
 
 import Header from './Header';
-import MovieSceneDetail from './MovieSceneDetail';
+import Footer from './Footer';
 
 function App() {
   // Todas las escenas de películas obtenidas de la API
@@ -42,7 +44,9 @@ function App() {
             .toLowerCase()
             .includes(movieNameFilterText.toLowerCase());
       // para el año
-      const isValidYear = true;
+      const isValidYear = !yearFilterValue
+        ? true
+        : movieScene.year === yearFilterValue;
 
       // Es valida si cumple las 2 condiciones
       return isValidMovieName && isValidYear;
@@ -51,8 +55,13 @@ function App() {
     setFilteredMovieScenes(validMovieScenes);
   };
 
-  const filterMovieScenesByName = (movieSceneName) => {
+  const handlefilterMovieScenesByName = (movieSceneName) => {
     setMovieNameFilterText(movieSceneName);
+    filterMovieScenes();
+  };
+  //filtrar escena por año
+  const handlefilterMovieScenesByYear = (movieSceneYear) => {
+    setYearFilterValue(movieSceneYear);
     filterMovieScenes();
   };
 
@@ -61,12 +70,12 @@ function App() {
       <Header />
       <main>
         <Filters
-          filterMovieScenesByName={filterMovieScenesByName}
-          // handleFilterYears={handleFilterYears}
+          handlefilterMovieScenesByName={handlefilterMovieScenesByName}
+          handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
         />
         <MovieSceneList dataMovie={filteredMovieScenes} />
       </main>
-      <footer />
+      <Footer />
     </>
   );
 }

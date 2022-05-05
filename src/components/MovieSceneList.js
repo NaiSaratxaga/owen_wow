@@ -1,5 +1,4 @@
 //Listado de las películas
-
 import '../styles/MovieSceneList.scss';
 
 function MovieSceneList(props) {

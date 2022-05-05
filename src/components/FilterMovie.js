@@ -1,6 +1,6 @@
 function FilterMovie(props) {
   const handleChangeMovie = (ev) => {
-    props.filterMovieScenesByName(ev.target.value);
+    props.handlefilterMovieScenesByName(ev.target.value);
   };
 
   return (

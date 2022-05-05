@@ -1,7 +1,9 @@
+import '../styles/Header.scss';
+
 function Header() {
   return (
     <header>
-      <h1> Owen wilson "wow"</h1>
+      <h1 className='title'> Owen wilson "wow"</h1>
     </header>
   );
 }
