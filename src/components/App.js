@@ -1,13 +1,14 @@
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
-//import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router';
 
 import getApiData from '../services/fetchMovies';
 //import LocalStorage from "../services/localStorage"
 
 import Filters from './Filters';
 import MovieSceneList from './MovieSceneList';
-//import MovieSceneDetail from './MovieSceneDetail';
+import MovieSceneDetail from './MovieSceneDetail';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -81,17 +82,35 @@ function App() {
     setAvailableYears(yearsFromMovieScenesWithoutDuplicates);
   };
 
+  const { pathname } = useLocation();
+  const dataPath = matchPath('/movie/:movieId', pathname);
+
+  const movieId = dataPath !== null ? dataPath.params.movieId : null;
+  const movieFound = allMovieScenes.find((movie) => movie.id === movieId);
+
   return (
     <>
       <Header />
 
-      <Filters
-        handlefilterMovieScenesByName={handlefilterMovieScenesByName}
-        handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
-        availableYears={availableYears}
-      />
-
-      <MovieSceneList dataMovie={filteredMovieScenes} />
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              <Filters
+                handlefilterMovieScenesByName={handlefilterMovieScenesByName}
+                handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
+                availableYears={availableYears}
+              />
+              <MovieSceneList dataMovie={filteredMovieScenes} />
+            </>
+          }
+        />
+        <Route
+          path='/movie/:movieId'
+          element={<MovieSceneDetail movie={movieFound} />}
+        />
+      </Routes>
 
       <Footer />
     </>

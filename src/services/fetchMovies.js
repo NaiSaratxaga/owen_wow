@@ -6,6 +6,7 @@ const getApiData = () => {
     .then((data) => {
       const dataClean = data.map((movie) => {
         return {
+          id: index,
           poster: movie.poster,
           name: movie.movie,
           quote: movie.full_line,
