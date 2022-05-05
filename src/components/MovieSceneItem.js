@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
 
-//Para cada película//
+import '../styles/MovieSceneItem.scss';
+
+//Para cada película
 function MovieSceneItem(props) {
   return (
-    <Link to={`/movieSceneDetail/${props.movie.id}`}>
-      <img src={props.movie.poster} alt='' />
+    <Link className='card' to={`/movieSceneDetail/${props.movie.id}`}>
+      <img src={props.movie.poster} alt='poster' title='poster' />
       <p>
-        {props.movie.movie} - {props.movie.year}
+        {props.movie.name} -- {props.movie.year}
       </p>
-      <p>{props.movie.full_line}</p>
+      <p>{props.movie.quote}</p>
     </Link>
   );
 }

@@ -1,31 +1,39 @@
-import '../styles/App.scss';
+//Hooks
 import { useState, useEffect } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
-
+//Services
 import getApiData from '../services/fetchMovies';
-//import LocalStorage from "../services/localStorage"
+import localStorage from '../services/localStorage';
 
+//Components
 import Filters from './Filters';
 import MovieSceneList from './MovieSceneList';
 import MovieSceneDetail from './MovieSceneDetail';
-
 import Header from './Header';
 import Footer from './Footer';
-import MovieSceneItem from './MovieSceneItem';
+
+//Styles
+import '../styles/App.scss';
 
 function App() {
   // Todas las escenas de películas obtenidas de la API
   // Nunca cambia una vez asignado
-  const [allMovieScenes, setAllMovieScenes] = useState([]);
+  const [allMovieScenes, setAllMovieScenes] = useState(
+    localStorage.get('allMovieScenes', [])
+  );
 
   // Las escenas de película que coinciden con el nombre y/o el año
   // Siempre son un subconjunto (igual o menor) de allMovieScenes
   const [filteredMovieScenes, setFilteredMovieScenes] = useState([]);
 
   // Filtros a aplicar
-  const [movieNameFilterText, setMovieNameFilterText] = useState('');
-  const [yearFilterValue, setYearFilterValue] = useState();
+  const [movieNameFilterText, setMovieNameFilterText] = useState(
+    localStorage.get('movieNameFilterText', [])
+  );
+  const [yearFilterValue, setYearFilterValue] = useState(
+    localStorage.get('yearFilterValue')
+  );
 
   // Años películas
   const [availableYears, setAvailableYears] = useState([]);
@@ -39,6 +47,14 @@ function App() {
       calculateAvailableYears(movieScenes);
     });
   }, []);
+
+  //Debemos guardar los datos en el local storage en un useEffect para que después de cambiar el local storage esté actualizado.
+  //Lee del local storage los datos y guárdalos en el useState para que estén disponibles al arrancar la página.
+  useEffect(() => {
+    localStorage.set('allMovieScenes', allMovieScenes);
+    localStorage.set('movieNameFilterText', movieNameFilterText);
+    localStorage.set('yearFilterValue', yearFilterValue);
+  }, [allMovieScenes, movieNameFilterText, yearFilterValue]);
 
   // Filtra escenas de pelicula por nombre de escena de película y año (cuando aplique)
   const filterMovieScenes = (movieName, year) => {
@@ -85,33 +101,35 @@ function App() {
 
   //REVISAR ESTA PARTE//
   const { pathname } = useLocation();
-  const dataPath = matchPath('/movie/:movieId', pathname);
+  const dataPath = matchPath('/movieSceneDetail/:movieId', pathname);
 
-  const movieId = dataPath !== null ? dataPath.params.movieId : null;
+  const movieId = dataPath !== null ? parseInt(dataPath.params.movieId) : null;
   const movieFound = allMovieScenes.find((movie) => movie.id === movieId);
 
   return (
     <>
       <Header />
-      <Routes>
-        <Route
-          path='/'
-          element={
-            <>
-              <Filters
-                handlefilterMovieScenesByName={handlefilterMovieScenesByName}
-                handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
-                availableYears={availableYears}
-              />
-              <MovieSceneList dataMovie={filteredMovieScenes} />
-            </>
-          }
-        />
-        <Route
-          path='/movieSceneDetail/:movieId'
-          element={<MovieSceneDetail movie={movieFound} />}
-        />
-      </Routes>
+      <div>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <Filters
+                  handlefilterMovieScenesByName={handlefilterMovieScenesByName}
+                  handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
+                  availableYears={availableYears}
+                />
+                <MovieSceneList dataMovie={filteredMovieScenes} />
+              </>
+            }
+          />
+          <Route
+            path='/movieSceneDetail/:movieId'
+            element={<MovieSceneDetail movie={movieFound} />}
+          />
+        </Routes>
+      </div>
       <Footer />
     </>
   );

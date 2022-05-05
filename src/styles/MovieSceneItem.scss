@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  max-width: 7.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  border: 0.1875rem solid #14d9c4;
+  overflow: hidden;
+  transition: 0.25s all;
+  cursor: pointer;
+}

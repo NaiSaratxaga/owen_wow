@@ -1,14 +1,13 @@
 //Listado de las películas
 import '../styles/MovieSceneList.scss';
 
+import MovieSceneItem from './MovieSceneItem';
+
 function MovieSceneList(props) {
   const movieItem = props.dataMovie.map((movie) => {
     return (
-      <li className='card' key={movie.id}>
-        <img src={movie.poster} alt='image poster' title='poster' />
-        <p>{movie.movie}</p>
-        <p>{movie.year}</p>
-        <p>{movie.quote}</p>
+      <li key={movie.id}>
+        <MovieSceneItem movie={movie}></MovieSceneItem>
       </li>
     );
   });

@@ -1,18 +1,14 @@
 // Detalle de cada película
 function MovieSceneDetail(props) {
+  const movie = props.movie;
   return (
     <>
-      <section key={props.movie.index}>
-        <img
-          className=''
-          src={props.movie.poster}
-          alt='poster'
-          title='poster'
-        />
-        <p>Name:{props.movie.movie}</p>
-        <p>Quote:{props.movie.full_line}</p>
-        <p>Director:{props.movie.director}</p>
-        <a href={props.movie.audio} target='_blank' rel='noreferrer'>
+      <section key={movie.index}>
+        <img className='' src={movie.poster} alt='poster' title='poster' />
+        <p>Name:{movie.movie}</p>
+        <p>Quote:{movie.quote}</p>
+        <p>Director:{movie.director}</p>
+        <a href={movie.audio} target='_blank' rel='noreferrer'>
           Audio del WoOoOoOWWWW
         </a>
       </section>
