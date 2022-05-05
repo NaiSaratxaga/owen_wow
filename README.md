@@ -9,9 +9,9 @@
 
 **Vamos a utilizar esta [API Wow de Owen Wilson](https://owen-wilson-wow-api.herokuapp.com/)**
 
-### Especificaciones
+## Especificaciones
 
-1. **Listado de escenas:**
+### 1. **Listado de escenas:**
 
 - En primer lugar, vamos a realizar una web con el listado de 50 escenas donde el actor Owen Wilson ha
   dicho 'wow'.
@@ -23,7 +23,7 @@
   - Frase completa **(full_line)**
   - Año **(year)**
 
-2. **Filtrado por película**
+### 2. **Filtrado por película**
 
 Ahora que ya tenemos el listado de escenas, la segunda parte consiste en realizar un filtro para buscar por
 película. Para eso, añadimos un **_input_** a la interfaz, de forma que al ir escribiendo un nombre queden en la
@@ -32,7 +32,7 @@ interfaz solo las escenas cuya película contiene las letras escritas.
 > **_Nota:_** en principio no es necesario tener en cuenta si las letras están en mayúscula / minúscula para
 > la búsqueda, pero si queréis añadir esta mejora pues genial.
 
-3. **Filtrado por año**
+### 3. **Filtrado por año**
 
 - Ahora que ya tenemos el listado de escenas en pantalla, y filtrado por nombre de la película donde aparece
   la escena, la siguiente parte consiste en filtrar el listado por año de la película. Para eso, añadimos un
@@ -44,7 +44,7 @@ interfaz solo las escenas cuya película contiene las letras escritas.
 > - Por defecto, cuando carga la página debe aparecer **todos.**
 > - Obtén los años de las películas del listado.
 
-4. **Componentes de la aplicación**
+### 4. **Componentes de la aplicación**
 
 - La aplicación debe tener los siguientes componentes como mínimo:
   - Componente para los filtros.
@@ -52,7 +52,7 @@ interfaz solo las escenas cuya película contiene las letras escritas.
   - Componente para la tarjeta de cada escena del listado **(MovieSceneItem).**
   - Componente para el detalle de cada escena del listado **(MovieSceneDetail).**
 
-5. **Detalle de cada escena**
+### 5. **Detalle de cada escena**
 
 - Vamos a implementar una nueva funcionalidad: al hacer clic sobre la tarjeta de una escena, su información
   aparecerá a pantalla completa. Para hacer esto usaremos rutas y React Router DOM. En la pantalla de
@@ -67,7 +67,7 @@ interfaz solo las escenas cuya película contiene las letras escritas.
 > listado de escenas de las películas porque es más complejo. Es mejor quitar el componente
 > MovieSceneList y mostrar el componente MovieSceneDetail usando React Router.
 
-6. **Detallitos de calidad**
+### 6. **Detallitos de calidad**
 
 - Como nos gusta cuidar la semántica, el campo de texto debe estar recubierto por una etiqueta
   **< form />**
@@ -81,7 +81,7 @@ interfaz solo las escenas cuya película contiene las letras escritas.
 - Al entrar en el detalle de un escena y a continuación pulsar atrás, el campo de texto debe mostrar el
   texto que tenía anteriormente.
 
-7. **BONUS: Mejoras visuales**
+### 7. **BONUS: Mejoras visuales**
 
 Para terminar, podéis realizar algunas mejoras visuales del ejercicio. Por ejemplo:
 
@@ -90,7 +90,7 @@ Para terminar, podéis realizar algunas mejoras visuales del ejercicio. Por ejem
 - Usar algún sistema de grid para pintar el listado.
 - Que funcione bien el responsive en dispositivos pequeños.
 
-8. **BONUS: URL compatible**
+### 8. **BONUS: URL compatible**
 
 Como ejercicio extra os proponemos que la URL del detalle de cada escena sea compatible, es decir,
 que si visitamos esa URL directamente en el navegador se vea el detalle de la escena de una película.
@@ -102,14 +102,20 @@ Y en el caso de que el usuario navegue a una URL inexistente como por ejemplo
 **_http://localhost:3000/detail/12345_** (el id 12345 no existe) debemos mostrar un mensaje
 del tipo **_"La escena que buscas no existe"_**
 
-9. **BONUS: Ordenación**
+### 9. **BONUS: Ordenación**
 
 Un extra interesante sería que ordenáseis el listado de escenas alfabéticamente por el nombre de la
 película.
 
-# Donde se puede ver 👀
+---
 
-# Este proyecto ha sido desarrollado con:
+### Donde se puede ver 👀
+
+## **[Proyecto Owen Wilson's WOW ](http://beta.adalab.es/modulo-3-evaluacion-final-NaiSaratxaga/)**
+
+---
+
+#### Este proyecto ha sido desarrollado con:
 
 <p>
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="react" width="40" height="40"/> </a> 
@@ -119,7 +125,9 @@ película.
 <a href="https://github.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt=“github” width="40" height="40"/> </a> 
 </p>
 
-# Guía para arrancar el proyecto
+---
+
+#### Guía para arrancar el proyecto
 
 > **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/) para trabajar con este Starter Kit.
 
@@ -139,5 +147,7 @@ npm install
 npm start
 ```
 
-**Autora:**
+---
+
+###**Autora:**
 [Naiara Saratxaga](https://github.com/NaiSaratxaga)
