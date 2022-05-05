@@ -1,17 +1,16 @@
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+//import { Link, Route, Routes } from 'react-router-dom';
 
 import getApiData from '../services/fetchMovies';
 //import LocalStorage from "../services/localStorage"
 
 import Filters from './Filters';
 import MovieSceneList from './MovieSceneList';
-import MovieSceneDetail from './MovieSceneDetail';
+//import MovieSceneDetail from './MovieSceneDetail';
 
 import Header from './Header';
 import Footer from './Footer';
-import { calculateNewValue } from '@testing-library/user-event/dist/utils';
 
 function App() {
   // Todas las escenas de películas obtenidas de la API
@@ -62,6 +61,7 @@ function App() {
     setMovieNameFilterText(movieSceneName);
     filterMovieScenes(movieSceneName, yearFilterValue);
   };
+
   //filtrar escena por año
   const handlefilterMovieScenesByYear = (movieSceneYear) => {
     setYearFilterValue(movieSceneYear);
@@ -73,7 +73,7 @@ function App() {
     const yearsFromMovieScenes = movieScenes.map((movieScene) => {
       return movieScene.year;
     });
-
+    //función para que no se dupliquen los años
     const yearsFromMovieScenesWithoutDuplicates = Array.from(
       new Set(yearsFromMovieScenes)
     ).sort();
