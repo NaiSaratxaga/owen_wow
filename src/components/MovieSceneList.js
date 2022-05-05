@@ -12,7 +12,8 @@ function MovieSceneList(props) {
       </li>
     );
   });
-
+  //si el texto no coincide con la descripcion que salga un mensaje
+  //<li>No hay ningún nombre que coincida con la búsqueda</li>;
   return (
     <section>
       <ul className='cards'>{movieItem}</ul>

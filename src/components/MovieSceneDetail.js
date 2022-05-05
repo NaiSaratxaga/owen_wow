@@ -13,7 +13,7 @@ function MovieSceneDetail(props) {
         <p>Quote:{props.movie.full_line}</p>
         <p>Director:{props.movie.director}</p>
         <a href={props.movie.audio} target='_blank' rel='noreferrer'>
-          Audio
+          Audio del WoOoOoOWWWW
         </a>
       </section>
     </>

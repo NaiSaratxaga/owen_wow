@@ -1,6 +1,6 @@
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 
 import getApiData from '../services/fetchMovies';
@@ -12,6 +12,7 @@ import MovieSceneDetail from './MovieSceneDetail';
 
 import Header from './Header';
 import Footer from './Footer';
+import MovieSceneItem from './MovieSceneItem';
 
 function App() {
   // Todas las escenas de películas obtenidas de la API
@@ -82,6 +83,7 @@ function App() {
     setAvailableYears(yearsFromMovieScenesWithoutDuplicates);
   };
 
+  //REVISAR ESTA PARTE//
   const { pathname } = useLocation();
   const dataPath = matchPath('/movie/:movieId', pathname);
 
@@ -91,7 +93,6 @@ function App() {
   return (
     <>
       <Header />
-
       <Routes>
         <Route
           path='/'
@@ -107,11 +108,10 @@ function App() {
           }
         />
         <Route
-          path='/movie/:movieId'
+          path='/movieSceneDetail/:movieId'
           element={<MovieSceneDetail movie={movieFound} />}
         />
       </Routes>
-
       <Footer />
     </>
   );
