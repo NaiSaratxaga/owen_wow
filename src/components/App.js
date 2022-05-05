@@ -29,10 +29,10 @@ function App() {
 
   // Filtros a aplicar
   const [movieNameFilterText, setMovieNameFilterText] = useState(
-    localStorage.get('movieNameFilterText', [])
+    localStorage.get('movieNameFilterText', '')
   );
   const [yearFilterValue, setYearFilterValue] = useState(
-    localStorage.get('yearFilterValue')
+    localStorage.get('yearFilterValue', '')
   );
 
   // Años películas
@@ -62,9 +62,7 @@ function App() {
       // para el nombre
       const isValidMovieName = !movieName
         ? true
-        : movieScene.name
-            .toLowerCase()
-            .includes(movieNameFilterText.toLowerCase());
+        : movieScene.name.toLowerCase().includes(movieName.toLowerCase());
       // para el año
       const isValidYear = !year ? true : movieScene.year === year;
 
