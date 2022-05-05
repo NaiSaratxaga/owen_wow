@@ -8,9 +8,9 @@ function FilterMovie(props) {
       <fieldset>
         <label htmlFor='name'>Movie</label>
         <input
-          type='search'
+          type='text'
           className=''
-          name='name'
+          name='text'
           id='name'
           placeholder='Search by movie name'
           onChange={handleChangeMovie}

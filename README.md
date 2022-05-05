@@ -1,6 +1,6 @@
 # Hola <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"> , soy Naiara
 
-**Y este es mi ejercicio de evaluación final del módulo 3, React**
+**Y este es mi ejercicio de evaluación final del módulo 3 de React.**
 
 ## 🚀 Descripción del proyecto:
 
@@ -13,15 +13,15 @@
 
 ### 1. **Listado de escenas:**
 
-- En primer lugar, vamos a realizar una web con el listado de 50 escenas donde el actor Owen Wilson ha
-  dicho 'wow'.
-  Para eso, vamos a utilizar el servicio de esta [API](https://owen-wilson-wow-api.herokuapp.com/wows/random?results=50/), que nos devuelve información de 50 escenas de películas aleatorias. Sobre cada una, vamos a
-  mostrar al menos:
+En primer lugar, vamos a realizar una web con el listado de 50 escenas donde el actor Owen Wilson ha
+dicho 'wow'.
+Para eso, vamos a utilizar el servicio de esta [API](https://owen-wilson-wow-api.herokuapp.com/wows/random?results=50/), que nos devuelve información de 50 escenas de películas aleatorias. Sobre cada una, vamos a
+mostrar al menos:
 
-  - Poster **(poster)**
-  - Película **(movie)**
-  - Frase completa **(full_line)**
-  - Año **(year)**
+- Poster **(poster)**
+- Película **(movie)**
+- Frase completa **(full_line)**
+- Año **(year)**
 
 ### 2. **Filtrado por película**
 
@@ -34,10 +34,10 @@ interfaz solo las escenas cuya película contiene las letras escritas.
 
 ### 3. **Filtrado por año**
 
-- Ahora que ya tenemos el listado de escenas en pantalla, y filtrado por nombre de la película donde aparece
-  la escena, la siguiente parte consiste en filtrar el listado por año de la película. Para eso, añadimos un
-  **_select_** a la interfaz, de forma que al seleccionar un año queden en la interfaz solo las escenas que
-  coincidan con el año seleccionado
+Ahora que ya tenemos el listado de escenas en pantalla, y filtrado por nombre de la película donde aparece
+la escena, la siguiente parte consiste en filtrar el listado por año de la película.
+Para eso, añadimos un **_select_** a la interfaz, de forma que al seleccionar un año queden en la interfaz solo las escenas que
+coincidan con el año seleccionado
 
 > **_Nota:_**
 >
@@ -46,22 +46,23 @@ interfaz solo las escenas cuya película contiene las letras escritas.
 
 ### 4. **Componentes de la aplicación**
 
-- La aplicación debe tener los siguientes componentes como mínimo:
-  - Componente para los filtros.
-  - Componente para el listado **(MovieSceneList)**.
-  - Componente para la tarjeta de cada escena del listado **(MovieSceneItem).**
-  - Componente para el detalle de cada escena del listado **(MovieSceneDetail).**
+La aplicación debe tener los siguientes componentes como mínimo:
+
+- Componente para los filtros.
+- Componente para el listado **(MovieSceneList)**.
+- Componente para la tarjeta de cada escena del listado **(MovieSceneItem).**
+- Componente para el detalle de cada escena del listado **(MovieSceneDetail).**
 
 ### 5. **Detalle de cada escena**
 
-- Vamos a implementar una nueva funcionalidad: al hacer clic sobre la tarjeta de una escena, su información
-  aparecerá a pantalla completa. Para hacer esto usaremos rutas y React Router DOM. En la pantalla de
-  detalle aparecerá:
+Vamos a implementar una nueva funcionalidad: al hacer clic sobre la tarjeta de una escena, su información
+aparecerá a pantalla completa. Para hacer esto usaremos rutas y React Router DOM. En la pantalla de
+detalle aparecerá:
 
-  - nombre de la película
-  - frase completa
-  - director
-  - el enlace del audio de la escena, al darle clic debe mostrarse en una pestaña aparte en el navegador.
+- nombre de la película
+- frase completa
+- director
+- el enlace del audio de la escena, al darle clic debe mostrarse en una pestaña aparte en el navegador.
 
 > **_Nota:_** no recomendamos mostrar el detalle de cada escena con una ventana modal por encima del
 > listado de escenas de las películas porque es más complejo. Es mejor quitar el componente
@@ -78,7 +79,7 @@ interfaz solo las escenas cuya película contiene las letras escritas.
   con la palabra ZZZ"
 - El filtro debe filtrar independientemente de que la usuaria introduzca el texto en mayúsuclas o
   minúsculas.
-- Al entrar en el detalle de un escena y a continuación pulsar atrás, el campo de texto debe mostrar el
+- Al entrar en el detalle de una escena y a continuación pulsas atrás, el campo de texto debe mostrar el
   texto que tenía anteriormente.
 
 ### 7. **BONUS: Mejoras visuales**

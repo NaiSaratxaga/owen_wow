@@ -2,9 +2,12 @@ import FilterMovie from './FilterMovie';
 import FilterYear from './FilterYear';
 
 function Filters(props) {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
   return (
     <section className=''>
-      <form>
+      <form onSubmit={handleSubmit}>
         <FilterMovie
           handlefilterMovieScenesByName={props.handlefilterMovieScenesByName}
         />
