@@ -1,9 +1,12 @@
+import '../styles/layout/Footer.scss';
+
 function Footer() {
   return (
-    <footer>
+    <footer className='footer'>
       <small>
         Made with 💓 by
         <a
+          className='link__footer'
           href='https://github.com/NaiSaratxaga'
           target='_blank'
           rel='noopener noreferrer'

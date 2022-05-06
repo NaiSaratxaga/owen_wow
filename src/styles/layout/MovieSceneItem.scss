@@ -8,13 +8,13 @@
   width: 90%;
   height: 95%;
   background-color: white;
-  margin: 10px auto;
+  margin: 0.625rem auto;
   overflow: hidden;
-  padding: 15px;
-  box-shadow: 8px 8px 10px #0a0a0a;
+  padding: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.625rem #0a0a0a;
   transition: 0.3s all ease-in-out;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   &__title {
     text-transform: uppercase;
@@ -28,7 +28,7 @@
   }
 
   &:hover {
-    margin-top: -10px;
+    margin-top: -0.625rem;
     cursor: pointer;
   }
 }
