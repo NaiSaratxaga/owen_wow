@@ -1,14 +1,60 @@
-.card__detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  max-width: 7.5rem;
-  border-radius: 0.5rem;
-  background-color: white;
-  border: 0.1875rem solid #14d9c4;
-  overflow: hidden;
-  transition: 0.25s all;
-  cursor: pointer;
+.card {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 1.125rem;
+    border: 0.1875rem solid #545656;
+    box-shadow: 0.313rem 0.313rem 1rem rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    cursor: pointer;
+  }
+
+  &__poster {
+    width: 12.5rem;
+    border-radius: 1rem;
+  }
+  &__text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: rgb(204, 44, 105);
+  }
+  &__quote {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: rgb(204, 44, 105);
+  }
+  &__director {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    font-size: 2rem;
+    color: rgb(204, 44, 105);
+  }
+}
+
+.button__link {
+  margin: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  text-decoration: none;
+  color: rgb(82, 78, 78);
+}
+
+.button__back {
+  background-color: rgb(204, 44, 105);
+  margin: 10px;
+  text-decoration: none;
+  color: rgb(55, 53, 54);
+  border-radius: 0.625rem;
+
+  &:hover {
+    background-color: rgb(237, 162, 193);
+    color: rgb(71, 68, 66);
+    cursor: pointer;
+  }
 }
