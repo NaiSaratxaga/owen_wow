@@ -13,6 +13,7 @@ function Filters(props) {
           handlefilterMovieScenesByName={props.handlefilterMovieScenesByName}
         />
         <FilterYear
+          initialFilterYear={props.initialFilterYear}
           handlefilterMovieScenesByYear={props.handlefilterMovieScenesByYear}
           availableYears={props.availableYears}
         />

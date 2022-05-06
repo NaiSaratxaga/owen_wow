@@ -70,6 +70,8 @@ function App() {
       return isValidMovieName && isValidYear;
     });
 
+    //ordenarlas por orden alfabético
+
     setFilteredMovieScenes(validMovieScenes);
   };
 
@@ -116,6 +118,7 @@ function App() {
               <>
                 <Filters
                   initialFilterName={movieNameFilterText}
+                  initialFilterYear={yearFilterValue}
                   handlefilterMovieScenesByName={handlefilterMovieScenesByName}
                   handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
                   availableYears={availableYears}
