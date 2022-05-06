@@ -2,12 +2,11 @@
 //botón atrás
 
 import '../styles/MovieSceneDetail.scss';
+import { Link } from 'react-router-dom';
 
 function MovieSceneDetail(props) {
   const movie = props.movie;
-  const handleClickBtn = (ev) => {
-    props.getBackToIndex();
-  };
+
   return (
     <>
       <section key={movie.index}>
@@ -23,8 +22,10 @@ function MovieSceneDetail(props) {
         <a href={movie.audio} target='_blank' rel='noreferrer'>
           Audio WoOoOoOWWWWoOOooWwWwwWW
         </a>
-        <button type='button' onClick={handleClickBtn}>
-          <a href='/'>Volver al listado de pelis</a>
+        <button type='button'>
+          <Link to={'/'}>
+            <p>Volver al listado de pelis</p>
+          </Link>
         </button>
       </section>
     </>

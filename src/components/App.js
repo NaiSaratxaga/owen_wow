@@ -98,10 +98,6 @@ function App() {
     setAvailableYears(yearsFromMovieScenesWithoutDuplicates);
   };
 
-  /* const getBackToIndex = (ev) {
-    console.log("probando boton");
-   } */
-
   //Revisar rutas Not found/
   const { pathname } = useLocation();
   const dataPath = matchPath('/movieSceneDetail/:movieId', pathname);
