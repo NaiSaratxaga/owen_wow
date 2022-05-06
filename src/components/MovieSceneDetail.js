@@ -15,9 +15,11 @@ function MovieSceneDetail(props) {
           alt='poster'
           title='poster'
         />
-        <p className='card__text'>Name:{movie.name}</p>
-        <p className='card__quote'>Quote:{movie.quote}</p>
-        <p className='card__director'>Director:{movie.director}</p>
+        <section className='card__text'>
+          <p>Name:{movie.name}</p>
+          <p>Quote:{movie.quote}</p>
+          <p>Director:{movie.director}</p>
+        </section>
         <a
           className='button__link'
           href={movie.audio}
@@ -28,7 +30,7 @@ function MovieSceneDetail(props) {
         </a>
         <button className='button__back' type='button'>
           <Link to={'/'}>
-            <p>Volver al listado de pelis</p>
+            <p className='button__link'>Volver al listado de pelis</p>
           </Link>
         </button>
       </section>

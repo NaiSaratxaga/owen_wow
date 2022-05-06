@@ -4,34 +4,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin: 50px;
     border-radius: 1.125rem;
     border: 0.1875rem solid #545656;
     box-shadow: 0.313rem 0.313rem 1rem rgba(0, 0, 0, 0.9);
-    height: 100vh;
+    width: 100vh;
     cursor: pointer;
   }
 
   &__poster {
     width: 12.5rem;
     border-radius: 1rem;
+    margin: 30px;
   }
   &__text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
-    font-size: 2rem;
-    color: rgb(204, 44, 105);
-  }
-  &__quote {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 1.8rem;
-    color: rgb(204, 44, 105);
-  }
-  &__director {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: lighter;
     font-size: 2rem;
     color: rgb(204, 44, 105);
   }
