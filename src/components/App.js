@@ -12,6 +12,7 @@ import MovieSceneList from './MovieSceneList';
 import MovieSceneDetail from './MovieSceneDetail';
 import Header from './Header';
 import Footer from './Footer';
+import NotFound from './NotFound';
 
 //Styles
 import '../styles/App.scss';
@@ -97,10 +98,13 @@ function App() {
     setAvailableYears(yearsFromMovieScenesWithoutDuplicates);
   };
 
-  //REVISAR ESTA PARTE//
+  /* const getBackToIndex = (ev) {
+    console.log("probando boton");
+   } */
+
+  //Revisar rutas Not found/
   const { pathname } = useLocation();
   const dataPath = matchPath('/movieSceneDetail/:movieId', pathname);
-
   const movieId = dataPath !== null ? parseInt(dataPath.params.movieId) : null;
   const movieFound = allMovieScenes.find((movie) => movie.id === movieId);
 
@@ -126,6 +130,7 @@ function App() {
             path='/movieSceneDetail/:movieId'
             element={<MovieSceneDetail movie={movieFound} />}
           />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
