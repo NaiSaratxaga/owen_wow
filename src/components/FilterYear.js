@@ -20,7 +20,7 @@ function FilterYear(props) {
           name='year'
           id='year'
           onChange={handleChangeYear}
-          value={props.initialFilterYear}
+          value={`${props.initialFilterYear}`}
         >
           <option value=''>All</option>
           {options}
