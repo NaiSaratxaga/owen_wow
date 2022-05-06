@@ -16,6 +16,7 @@ import NotFound from './NotFound';
 
 //Styles
 import '../styles/App.scss';
+import '../styles/core/_reset.scss';
 
 function App() {
   // Todas las escenas de películas obtenidas de la API

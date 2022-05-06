@@ -1,6 +1,6 @@
 // Detalle de cada película
 //botón atrás
-import '../styles/MovieSceneDetail.scss';
+import '../styles/layout/MovieSceneDetail.scss';
 import { Link } from 'react-router-dom';
 
 function MovieSceneDetail(props) {

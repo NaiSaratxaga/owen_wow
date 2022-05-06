@@ -1,10 +1,11 @@
-import '../styles/Header.scss';
+import '../styles/layout/Header.scss';
+import logo from '../images/logo.jpeg';
 
 function Header() {
   return (
-    <header>
-      <h1 className='title'> Owen wilson "wow"</h1>
-      <img src='./images/owen.jpeg' alt='Owen' title='Owen' />
+    <header className='header'>
+      <h1 className='header__title'> Owen Wilson </h1>
+      <img className='header__logo' src={logo} alt='Owen' title='Owen' />
     </header>
   );
 }

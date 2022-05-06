@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../styles/MovieSceneItem.scss';
+import '../styles/layout/MovieSceneItem.scss';
 
 //Para cada película
 function MovieSceneItem(props) {
