@@ -42,8 +42,10 @@ function App() {
   // estado de todas y de filtradas (si no hay filtros se muestran todas)
   useEffect(() => {
     getApiData().then((movieScenes) => {
-      setAllMovieScenes(movieScenes);
-      setFilteredMovieScenes(movieScenes);
+      const sortedMovieScenes = movieScenes.sort(compareMoviScenesByName);
+
+      setAllMovieScenes(sortedMovieScenes);
+      setFilteredMovieScenes(sortedMovieScenes);
       calculateAvailableYears(movieScenes);
     });
   }, []);
@@ -55,6 +57,16 @@ function App() {
     localStorage.set('movieNameFilterText', movieNameFilterText);
     localStorage.set('yearFilterValue', yearFilterValue);
   }, [allMovieScenes, movieNameFilterText, yearFilterValue]);
+
+  const compareMoviScenesByName = (movieScenesA, movieScenesB) => {
+    if (movieScenesA.name > movieScenesB.name) {
+      return 1;
+    }
+    if (movieScenesA.name < movieScenesB.name) {
+      return -1;
+    }
+    return 0;
+  };
 
   // Filtra escenas de pelicula por nombre de escena de película y año
   const filterMovieScenes = (movieName, year) => {
@@ -70,9 +82,9 @@ function App() {
       return isValidMovieName && isValidYear;
     });
 
-    //ordenarlas por orden alfabético
+    const sortedMovieScenes = validMovieScenes.sort(compareMoviScenesByName);
 
-    setFilteredMovieScenes(validMovieScenes);
+    setFilteredMovieScenes(sortedMovieScenes);
   };
 
   const handlefilterMovieScenesByName = (movieSceneName) => {
