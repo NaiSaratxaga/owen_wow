@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 2px black solid;
+  border-bottom: 0.125rem black solid;
 
   &__logo {
-    width: 400px;
-    margin-bottom: 10px;
+    width: 18.75rem;
+    margin-bottom: 0.625rem;
   }
 
   &__title {
-    font-size: 100px;
+    font-size: 6.25rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #320510;
   }
