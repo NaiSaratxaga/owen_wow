@@ -9,6 +9,7 @@ function Filters(props) {
     <section className=''>
       <form onSubmit={handleSubmit}>
         <FilterMovie
+          initialFilterName={props.initialFilterName}
           handlefilterMovieScenesByName={props.handlefilterMovieScenesByName}
         />
         <FilterYear

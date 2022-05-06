@@ -14,6 +14,7 @@ function FilterMovie(props) {
           id='name'
           placeholder='Search by movie name'
           onChange={handleChangeMovie}
+          value={props.initialFilterName}
         />
       </fieldset>
     </>

@@ -19,7 +19,6 @@ import '../styles/App.scss';
 
 function App() {
   // Todas las escenas de películas obtenidas de la API
-  // Nunca cambia una vez asignado
   const [allMovieScenes, setAllMovieScenes] = useState(
     localStorage.get('allMovieScenes', [])
   );
@@ -57,7 +56,7 @@ function App() {
     localStorage.set('yearFilterValue', yearFilterValue);
   }, [allMovieScenes, movieNameFilterText, yearFilterValue]);
 
-  // Filtra escenas de pelicula por nombre de escena de película y año (cuando aplique)
+  // Filtra escenas de pelicula por nombre de escena de película y año
   const filterMovieScenes = (movieName, year) => {
     const validMovieScenes = allMovieScenes.filter((movieScene) => {
       // para el nombre
@@ -98,12 +97,14 @@ function App() {
     setAvailableYears(yearsFromMovieScenesWithoutDuplicates);
   };
 
-  //Revisar rutas Not found/
   const { pathname } = useLocation();
   const dataPath = matchPath('/movieSceneDetail/:movieId', pathname);
   const movieId = dataPath !== null ? parseInt(dataPath.params.movieId) : null;
   const movieFound = allMovieScenes.find((movie) => movie.id === movieId);
 
+  // metodo cuando haya navegado
+
+  //Revisar rutas Not found/
   return (
     <>
       <Header />
@@ -114,6 +115,7 @@ function App() {
             element={
               <>
                 <Filters
+                  initialFilterName={movieNameFilterText}
                   handlefilterMovieScenesByName={handlefilterMovieScenesByName}
                   handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
                   availableYears={availableYears}
