@@ -1,0 +1,15 @@
+.notFound {
+  &__ouch {
+    font-size: 5rem;
+  }
+  &__container {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  &__linkHome {
+    font-size: 3rem;
+    padding: 10px 0;
+    color: rgb(121, 112, 112);
+  }
+}
