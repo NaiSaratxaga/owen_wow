@@ -1,5 +1,6 @@
 //Listado de las películas
 import '../styles/layout/MovieSceneList.scss';
+
 import MovieSceneItem from './MovieSceneItem';
 
 function MovieSceneList(props) {
@@ -15,9 +16,9 @@ function MovieSceneList(props) {
     });
 
     return (
-      <section>
-        <ul className='cards'>{movieItem}</ul>
-      </section>
+      <main className='movieSceneList__container'>
+        <ul className='movieSceneList__cardsContainer'>{movieItem}</ul>
+      </main>
     );
   }
 }

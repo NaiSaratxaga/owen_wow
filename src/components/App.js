@@ -122,31 +122,29 @@ function App() {
   //Revisar rutas Not found/
   return (
     <>
-      <Header />
-      <div>
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <>
-                <Filters
-                  initialFilterName={movieNameFilterText}
-                  initialFilterYear={yearFilterValue}
-                  handlefilterMovieScenesByName={handlefilterMovieScenesByName}
-                  handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
-                  availableYears={availableYears}
-                />
-                <MovieSceneList dataMovie={filteredMovieScenes} />
-              </>
-            }
-          />
-          <Route
-            path='/movieSceneDetail/:movieId'
-            element={<MovieSceneDetail movie={movieFound} />}
-          />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              <Header />
+              <Filters
+                initialFilterName={movieNameFilterText}
+                initialFilterYear={yearFilterValue}
+                handlefilterMovieScenesByName={handlefilterMovieScenesByName}
+                handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
+                availableYears={availableYears}
+              />
+              <MovieSceneList dataMovie={filteredMovieScenes} />
+            </>
+          }
+        />
+        <Route
+          path='/movieSceneDetail/:movieId'
+          element={<MovieSceneDetail movie={movieFound} />}
+        />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
       <Footer />
     </>
   );

@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className='footer'>
       <small>
-        Made with 💓 by
+        Made with 💓 by &nbsp;
         <a
           className='link__footer'
           href='https://github.com/NaiSaratxaga'
