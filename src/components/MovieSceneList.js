@@ -2,10 +2,11 @@
 import '../styles/layout/MovieSceneList.scss';
 
 import MovieSceneItem from './MovieSceneItem';
+import NoMovieScenes from './NoMovieScenes';
 
 function MovieSceneList(props) {
   if (props.dataMovie.length === 0) {
-    return <p>No hay ninguna WoWoWW peli que coincida con tu búqueda</p>;
+    return <NoMovieScenes movieNameFilterText={props.movieNameFilterText} />;
   } else {
     const movieItem = props.dataMovie.map((movie) => {
       return (

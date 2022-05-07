@@ -135,7 +135,10 @@ function App() {
                 handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
                 availableYears={availableYears}
               />
-              <MovieSceneList dataMovie={filteredMovieScenes} />
+              <MovieSceneList
+                dataMovie={filteredMovieScenes}
+                movieNameFilterText={movieNameFilterText}
+              />
             </>
           }
         />
