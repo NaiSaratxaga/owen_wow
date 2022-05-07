@@ -1,46 +1,78 @@
-.container {
+.movieScene__container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 6.25rem;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: white;
   border-radius: 1.125rem;
-  border: 0.1875rem solid #545656;
-  box-shadow: 0.313rem 0.313rem 1rem rgba(0, 0, 0, 0.9);
-  width: 100vh;
+  box-shadow: 0.313rem 0.313rem 1rem rgba(236, 229, 229, 0.9);
   cursor: pointer;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.poster {
-  width: 12.5rem;
-  border-radius: 1rem;
-  margin: 1.875rem;
-}
-.text {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bolder;
-  font-size: 2rem;
-  color: rgb(204, 44, 105);
-}
+.movieScene {
+  &__poster {
+    width: 25rem;
+  }
 
-.link {
-  margin: 1.875rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bolder;
+  &__details {
+    padding: 0.5rem 3rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__director {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  &__quote {
+    font-size: 3rem;
+    font-style: italic;
+    margin-inline: 0;
+
+    &:before {
+      content: '“';
+    }
+
+    &:after {
+      content: '”';
+    }
+  }
+
+  &__navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__linkHome {
+    font-size: 1.25rem;
+    padding: 10px 0;
+    color: rgb(121, 112, 112);
+  }
+}
+.btn__linkAudio {
+  background-color: rgb(73, 100, 155);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
   text-decoration: none;
-  color: rgb(82, 78, 78);
-}
-
-.button__back {
-  background-color: rgb(204, 44, 105);
-  margin: 10px;
-  text-decoration: none;
-  color: rgb(55, 53, 54);
-  border-radius: 0.625rem;
-
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 15px;
   &:hover {
-    background-color: rgb(237, 162, 193);
-    color: rgb(71, 68, 66);
-    cursor: pointer;
+    background-color: rgb(86, 80, 101);
+    color: white;
   }
 }

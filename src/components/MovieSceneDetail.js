@@ -1,40 +1,39 @@
 // Detalle de cada película
-//botón atrás
 import '../styles/layout/MovieSceneDetail.scss';
 import { Link } from 'react-router-dom';
 
 function MovieSceneDetail(props) {
-  const movie = props.movie;
+  const { poster, name, quote, director, audio } = props.movie;
 
   return (
-    <div className='container'>
-      <section key={movie.index}>
-        <img
-          className='poster'
-          src={movie.poster}
-          alt='poster'
-          title='poster'
-        />
-      </section>
+    <div className='movieScene__container'>
+      <img
+        className='movieScene__poster'
+        src={poster}
+        alt='poster'
+        title='poster'
+      />
+      <section className='movieScene__details'>
+        <div>
+          {/* Movie scene info */}
+          <h2 className='movieScene__title'>{name}</h2>
+          <h3 className='movieScene__director'>{director}</h3>
 
-      <section className='text'>
-        <p>Name:{movie.name}</p>
-        <p>Quote:{movie.quote}</p>
-        <p>Director:{movie.director}</p>
-      </section>
+          {/* Quote */}
+          <blockquote className='movieScene__quote'>{quote}</blockquote>
+        </div>
 
-      <section>
-        <a className='link' href={movie.audio} target='_blank' rel='noreferrer'>
-          Audio WoOoOoOWWWWoOOooWwWwwWW
-        </a>
-      </section>
-
-      <section>
-        <button className='button__back' type='button'>
+        <nav className='movieScene__navContainer'>
           <Link to={'/'}>
-            <p className='button__link'>Volver al listado de pelis</p>
+            <p className='movieScene__linkHome'> Volver al listado de pelis</p>
           </Link>
-        </button>
+
+          <button className='btn__linkAudio'>
+            <a href={audio} target='_blank' rel='noreferrer'>
+              Audio WoWoOW!
+            </a>
+          </button>
+        </nav>
       </section>
     </div>
   );
