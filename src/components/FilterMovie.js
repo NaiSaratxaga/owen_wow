@@ -1,23 +1,24 @@
+import '../styles/layout/FilterMovie.scss';
+
 function FilterMovie(props) {
   const handleChangeMovie = (ev) => {
     props.handlefilterMovieScenesByName(ev.target.value);
   };
 
   return (
-    <>
-      <fieldset>
-        <label htmlFor='name'>Movie</label>
-        <input
-          type='text'
-          className=''
-          name='text'
-          id='name'
-          placeholder='Search by movie name'
-          onChange={handleChangeMovie}
-          value={props.initialFilterName}
-        />
-      </fieldset>
-    </>
+    <div className='filterMovie__container'>
+      <label className='filterMovie__title' htmlFor='name'>
+        Movie:
+      </label>
+      <input
+        type='text'
+        name='text'
+        id='name'
+        placeholder='Movie name'
+        onChange={handleChangeMovie}
+        value={props.initialFilterName}
+      />
+    </div>
   );
 }
 

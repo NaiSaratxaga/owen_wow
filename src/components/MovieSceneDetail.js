@@ -22,7 +22,7 @@ function MovieSceneDetail(props) {
           {/* Quote */}
           <blockquote className='movieScene__quote'>{quote}</blockquote>
         </div>
-
+        {/* Links */}
         <nav className='movieScene__navContainer'>
           <Link to={'/'}>
             <p className='movieScene__linkHome'> Volver al listado de pelis</p>

@@ -1,3 +1,5 @@
+import '../styles/layout/FilterYear.scss';
+
 function FilterYear(props) {
   const handleChangeYear = (ev) => {
     props.handlefilterMovieScenesByYear(parseInt(ev.target.value));
@@ -13,20 +15,20 @@ function FilterYear(props) {
   });
 
   return (
-    <>
-      <fieldset>
-        <label htmlFor='year'>Year</label>
-        <select
-          name='year'
-          id='year'
-          onChange={handleChangeYear}
-          value={`${props.initialFilterYear}`}
-        >
-          <option value=''>All</option>
-          {options}
-        </select>
-      </fieldset>
-    </>
+    <div className='filterYear__container'>
+      <label className='filterYear__title' htmlFor='year'>
+        Year
+      </label>
+      <select
+        name='year'
+        id='year'
+        onChange={handleChangeYear}
+        value={`${props.initialFilterYear}`}
+      >
+        <option value=''>All</option>
+        {options}
+      </select>
+    </div>
   );
 }
 
