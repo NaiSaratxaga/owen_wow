@@ -1,10 +1,14 @@
-
-
-
-
 # Hola <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"> , soy Naiara
 
 **Y este es mi ejercicio de evaluación final del módulo 3 de React.**
+
+---
+
+### DEMO proyecto
+
+https://user-images.githubusercontent.com/99652446/167273373-e8ce8e6d-0b5b-4b97-98f7-36287513fc3f.mp4
+
+---
 
 ## 🚀 Descripción del proyecto:
 
@@ -114,15 +118,9 @@ película.
 
 ---
 
-### Donde se puede ver 👀
+### Dónde se puede ver 👀
 
 ### **[Proyecto Owen Wilson's WOW ](http://beta.adalab.es/modulo-3-evaluacion-final-NaiSaratxaga/)**
-
----
-
-### DEMO proyecto
-
-https://user-images.githubusercontent.com/99652446/167273373-e8ce8e6d-0b5b-4b97-98f7-36287513fc3f.mp4
 
 ---
 
