@@ -19,6 +19,9 @@ import '../styles/App.scss';
 import '../styles/core/reset.scss';
 
 function App() {
+  // Almacena si esta leyendo las escenas de pelicula de la API
+  const [isLoading, setIsLoading] = useState(true);
+
   // Todas las escenas de películas obtenidas de la API
   const [allMovieScenes, setAllMovieScenes] = useState(
     localStorage.get('allMovieScenes', [])
@@ -46,7 +49,7 @@ function App() {
 
     setAllMovieScenes([]);
     setFilteredMovieScenes([]);
-    setMovieNameFilterText([]);
+    setMovieNameFilterText('');
     setYearFilterValue('');
   }
   // Obtiene las escenas de pelicula de la Api y las asigna al
@@ -59,6 +62,8 @@ function App() {
       setAllMovieScenes(sortedMovieScenes);
       setFilteredMovieScenes(sortedMovieScenes);
       calculateAvailableYears(movieScenes);
+
+      setIsLoading(false);
     });
   }, []);
 
@@ -145,6 +150,7 @@ function App() {
                 availableYears={availableYears}
               />
               <MovieSceneList
+                isLoading={isLoading}
                 dataMovie={filteredMovieScenes}
                 movieNameFilterText={movieNameFilterText}
               />
