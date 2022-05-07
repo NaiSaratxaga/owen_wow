@@ -4,12 +4,8 @@
   align-items: center;
 
   &__logo {
-    width: 18.75rem;
+    width: 60%;
     margin-bottom: 0.625rem;
-  }
-
-  &__title {
-    font-size: 6.25rem;
-    color: #320510;
+    padding: 8rem;
   }
 }
