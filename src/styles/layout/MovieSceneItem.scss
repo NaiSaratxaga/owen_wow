@@ -11,19 +11,21 @@
   margin: 0.625rem auto;
   overflow: hidden;
   padding: 1rem;
-  box-shadow: 0.5rem 0.5rem 0.625rem #0a0a0a;
+  box-shadow: 0.5rem 0.5rem 0.625rem #9f9a9a;
   transition: 0.3s all ease-in-out;
   font-size: 1.25rem;
   font-weight: bold;
   &__title {
     text-transform: uppercase;
-    color: rgb(237, 43, 104);
+    color: rgb(76, 75, 75);
   }
   &__year {
-    color: rgb(73, 172, 225);
+    color: rgb(76, 75, 75);
   }
   &__subtitle {
-    color: rgb(131, 139, 143);
+    font-style: italic;
+    font-weight: lighter;
+    color: rgb(96, 93, 93);
   }
 
   &:hover {

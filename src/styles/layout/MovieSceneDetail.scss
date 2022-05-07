@@ -55,9 +55,19 @@
   }
 
   &__linkHome {
+    display: flex;
+    align-items: center;
     font-size: 1.25rem;
     padding: 10px 0;
     color: rgb(121, 112, 112);
+
+    &Icon {
+      padding-right: 0.5rem;
+    }
+
+    &:hover {
+      color: #20c2f7;
+    }
   }
 
   &__cta {

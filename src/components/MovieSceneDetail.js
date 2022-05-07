@@ -1,6 +1,7 @@
 // Detalle de cada película
 import '../styles/layout/MovieSceneDetail.scss';
 import { Link } from 'react-router-dom';
+import arrow from '../images/arrow.png';
 
 function MovieSceneDetail(props) {
   const { poster, name, quote, director, audio } = props.movie;
@@ -24,8 +25,9 @@ function MovieSceneDetail(props) {
         </div>
         {/* Links */}
         <nav className='movieScene__navContainer'>
-          <Link to={'/'}>
-            <p className='movieScene__linkHome'> Volver al listado de pelis</p>
+          <Link className='movieScene__linkHome' to={'/'}>
+            <img className='movieScene__linkHomeIcon' src={arrow} alt='arrow' />
+            <p> Volver al listado de pelis</p>
           </Link>
 
           <button className='movieScene__cta'>

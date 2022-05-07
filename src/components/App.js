@@ -39,9 +39,20 @@ function App() {
   // Años películas
   const [availableYears, setAvailableYears] = useState([]);
 
+  function resetState() {
+    localStorage.remove('allMovieScenes');
+    localStorage.remove('movieNameFilterText');
+    localStorage.remove('yearFilterValue');
+
+    setAllMovieScenes([]);
+    setFilteredMovieScenes([]);
+    setMovieNameFilterText([]);
+    setYearFilterValue('');
+  }
   // Obtiene las escenas de pelicula de la Api y las asigna al
   // estado de todas y de filtradas (si no hay filtros se muestran todas)
   useEffect(() => {
+    resetState();
     getApiData().then((movieScenes) => {
       const sortedMovieScenes = movieScenes.sort(compareMoviScenesByName);
 
@@ -116,8 +127,6 @@ function App() {
   const dataPath = matchPath('/movieSceneDetail/:movieId', pathname);
   const movieId = dataPath !== null ? parseInt(dataPath.params.movieId) : null;
   const movieFound = allMovieScenes.find((movie) => movie.id === movieId);
-
-  // metodo cuando haya navegado
 
   //Revisar rutas Not found/
   return (
