@@ -39,6 +39,8 @@ function App() {
     localStorage.get('yearFilterValue', '')
   );
 
+  const [filterCharacter, setFilterCharacter] = useState('');
+
   // Años películas
   const [availableYears, setAvailableYears] = useState([]);
 
@@ -86,7 +88,7 @@ function App() {
   };
 
   // Filtra escenas de pelicula por nombre de escena de película y año
-  const filterMovieScenes = (movieName, year) => {
+  const filterMovieScenes = (movieName, year, character) => {
     const validMovieScenes = allMovieScenes.filter((movieScene) => {
       // para el nombre
       const isValidMovieName = !movieName
@@ -95,8 +97,12 @@ function App() {
       // para el año
       const isValidYear = !year ? true : movieScene.year === year;
 
+      const isValidMovieCharacter = !character
+        ? true
+        : movieScene.character.toLowerCase().includes(character.toLowerCase());
+
       // Es valida si cumple las 2 condiciones
-      return isValidMovieName && isValidYear;
+      return isValidMovieName && isValidYear && isValidMovieCharacter;
     });
 
     const sortedMovieScenes = validMovieScenes.sort(compareMoviScenesByName);
@@ -106,13 +112,13 @@ function App() {
 
   const handlefilterMovieScenesByName = (movieSceneName) => {
     setMovieNameFilterText(movieSceneName);
-    filterMovieScenes(movieSceneName, yearFilterValue);
+    filterMovieScenes(movieSceneName, yearFilterValue, filterCharacter);
   };
 
   //filtrar escena por año
   const handlefilterMovieScenesByYear = (movieSceneYear) => {
     setYearFilterValue(movieSceneYear);
-    filterMovieScenes(movieNameFilterText, movieSceneYear);
+    filterMovieScenes(movieNameFilterText, movieSceneYear, filterCharacter);
   };
 
   //calcular todos los años en availableYears, tengo que cogerlo de la Api y guardarlos
@@ -126,6 +132,14 @@ function App() {
     ).sort();
 
     setAvailableYears(yearsFromMovieScenesWithoutDuplicates);
+  };
+  const handleChangeCharacter = (movieSceneCharacter) => {
+    setFilterCharacter(movieSceneCharacter);
+    filterMovieScenes(
+      movieNameFilterText,
+      yearFilterValue,
+      movieSceneCharacter
+    );
   };
 
   const { pathname } = useLocation();
@@ -145,8 +159,10 @@ function App() {
               <Filters
                 initialFilterName={movieNameFilterText}
                 initialFilterYear={yearFilterValue}
+                initialFilterCharacter={filterCharacter}
                 handlefilterMovieScenesByName={handlefilterMovieScenesByName}
                 handlefilterMovieScenesByYear={handlefilterMovieScenesByYear}
+                handleChangeCharacter={handleChangeCharacter}
                 availableYears={availableYears}
               />
               <MovieSceneList

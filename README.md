@@ -160,4 +160,4 @@ npm start
 
 ### Autora:
 
-[Naiara Saratxaga](https://github.com/NaiSaratxaga)
+[Naiara Saratxaga ](https://github.com/NaiSaratxaga)
